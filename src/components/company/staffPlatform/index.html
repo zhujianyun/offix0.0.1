@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Title</title>
+  <link rel="stylesheet" href="../../../assets/css/common.css">
+  <style>
+    body, html, main {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .head {
+      height: 60px;
+      background: pink;
+      padding: 0 20px;
+      line-height: 60px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    nav {
+      height: 60px;
+      background: yellow;
+      box-shadow: 0 1px 5px #888888;
+      padding: 0 148px;
+      line-height: 60px;
+    }
+
+    nav > ul > li {
+      float: left;
+      cursor: pointer;
+    }
+
+    nav > ul > li + li {
+      margin-left: 80px;
+    }
+
+    .fr {
+      float: right;
+    }
+
+    .fl {
+      float: left;
+    }
+
+    section {
+      padding: 0 0 0 130px;
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+    }
+
+    section span {
+      /*width:208px;*/
+      height: 29px;
+      font-size: 30px;
+      /*font-family: MicrosoftYaHei;*/
+      color: rgba(51, 51, 51, 1);
+      line-height: 100px;
+    }
+
+    section ul {
+      margin-left: 30px;
+    }
+
+    section ul li {
+      float: left;
+      line-height: 110px;
+    }
+
+    /*section ul li + li {*/
+    /*margin-left: 30px;*/
+    /*}*/
+
+    .Lists {
+      width: 100%;
+      height:100vh;
+      /*background: red;*/
+    }
+
+    .Lists .main {
+      width: 30%;
+      height: 400px;
+      background: skyblue;
+    }
+
+    .Lists .right_right {
+      width: 60%;
+      height: 100%;
+    }
+
+    .Lists .right_right li {
+      width:40%;
+      height: 184px;
+      background: yellow;
+    }
+
+    .Lists .right_right li {
+      margin-bottom: 30px;
+    }
+
+    .Lists .right_right li:nth-of-type(even) {
+      margin-left: 30px;
+    }
+
+    /*@media screen and (max-width: 1366px) {*/
+      /*.head {*/
+        /*height: 50px;*/
+        /*line-height: 50px;*/
+      /*}*/
+      /*section {*/
+        /*padding: 0 0 0 100px;*/
+        /*height:380px;*/
+      /*}*/
+      /*nav {*/
+        /*height: 50px;*/
+        /*line-height: 50px;*/
+        /*background: yellow;*/
+        /*box-shadow: 0 1px 5px #888888;*/
+        /*padding: 0 148px;*/
+      /*}*/
+      /*section ul {*/
+        /*margin-left: 20px;*/
+      /*}*/
+      /*.Lists .main {*/
+        /*width: 510px;*/
+        /*height: 390px;*/
+        /*background: skyblue;*/
+      /*}*/
+      /*.Lists .right_right {*/
+        /*width: 620px;*/
+        /*!*height: 100%;*!*/
+      /*}*/
+      /*.Lists .right_right li {*/
+        /*width: 280px;*/
+        /*height: 120px;*/
+        /*background: yellow;*/
+      /*}*/
+      /*.Lists .right_right li {*/
+        /*margin-bottom: 20px;*/
+      /*}*/
+      /*.Lists .right_right li:nth-of-type(even) {*/
+        /*margin-left: 20px;*/
+      /*}*/
+    /*}*/
+  </style>
+</head>
+<body>
+<!--<main>-->
+<div class="head">
+  <span style="width:40px;height: 24px;background: red;display:inline-block;vertical-align: middle"></span>
+  <span class="title" style="margin-left: 82px">王德东的平台</span>
+  <span class="fr">退出</span>
+</div>
+<nav>
+  <ul class="">
+    <li>我的任务</li>
+    <li>我的项目</li>
+    <li>我的文件</li>
+  </ul>
+</nav>
+<section class="">
+  <div class="clearfix">
+    <span class="fl ">8月18日 星期四</span>
+    <ul class="fl ">
+      <li>我收到的任务</li>
+      <li>我收到的任务</li>
+      <li>我收到的任务</li>
+      <li>我收到的任务</li>
+      <li>我收到的任务</li>
+    </ul>
+  </div>
+  <div class="Lists clearfix">
+    <div class="main fl"></div>
+    <ul class="right_right fl">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</section>
+<!--</main>-->
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>H5高级编辑分享</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="jquery/jquery-1.10.2.min.js"></script>
+  <link rel="stylesheet" href="photoswipe/photoswipe.css">
+  <link rel="stylesheet" href="photoswipe/default-skin.css">
+  <script src="photoswipe/photoswipe.min.js"></script>
+  <script src="photoswipe/photoswipe-ui-default.min.js"></script>
+</head>
+<style>
+  /*+++++++++++++++++++++++++++++++++++++*/
+  body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    color: #333333;
+    letter-spacing: 1px;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    font-family: "PingFang SC", Helvetical, "Helvetica Neue", "Noto SansCJK,Arial", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-seri, sans-serif;
+  }
+
+  address, caption, cite, code, dfn, th, var {
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  a {
+    color: #555;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    border: none;
+  }
+
+  .clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+
+  .clearfix {
+    *zoom: 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+
+  h1 {
+    font-size: 26px !important;
+  }
+
+  h2 {
+    font-size: 24px !important;
+  }
+
+  h3 {
+    font-size: 22px !important;
+    font-family: PingFangSC-Semibold, sans-serif;
+  }
+
+  h4 {
+    font-size: 20px !important;
+  }
+
+  h5 {
+    font-size: 18px !important;
+    font-family: PingFangSC-Semibold, sans-serif;
+  }
+
+  h6 {
+    font-size: 14px !important;
+  }
+
+  #myShare {
+    padding: 0 25px 25px;
+  }
+
+  /*+++++++++++++++++++++++++++++++++++++*/
+  .my-gallery {
+    /*width: 100%;*/
+    float: none !important;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .my-gallery img {
+    /*width: 100%;*/
+    height: auto;
+  }
+
+  .my-gallery figure {
+    display: block;
+    /*margin: 0 5px 5px 0;*/
+    width: 80px;
+    cursor: pointer;
+    float: none !important;
+  }
+
+  .my-gallery figcaption {
+    display: none;
+  }
+
+  /* .grid_div_p div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, p, blockquote, th, td, strong, em, u, span {
+    -webkit-margin-before: 2px !important;
+    -webkit-margin-after: 2px !important;
+  } */
+
+  body {
+    margin: 0;
+    background-color: #fff;
+  }
+
+  iframe #myShare {
+    zoom: 0.7;
+  }
+
+  .cur {
+    cursor: pointer;
+  }
+
+  .word_over {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .box_sizing {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+
+  }
+
+  .ml-10 {
+    margin-left: 10px;
+  }
+
+  .dis-bl {
+    display: block;
+  }
+
+  .dis-in {
+    display: inline;
+  }
+
+  .dis-in-bl {
+    display: inline-block;
+  }
+
+  .bubble {
+    position: fixed;
+    left: 500px;
+    top: 140px;
+    width: 298px;
+    min-height: 30px !important;
+    height: auto !important;
+    z-index: 999;
+  }
+
+  .bubble .ql-tooltip {
+    width: 560px;
+    z-index: 999 !important;
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background-color: #4583f0 !important;
+    color: #FFFFFF !important;
+  }
+
+  .bubble .ql-tooltip .ql-tooltip-arrow {
+    border-bottom: 6px solid #4583F0 !important;
+  }
+
+  .bubble .ql-tooltip .ql-picker-options {
+    background-color: #4583f0 !important;
+  }
+
+  .bubble .ql-tooltip .ql-stroke {
+    stroke: #ffffff !important;
+  }
+
+  .bubble .ql-tooltip .ql-picker-label {
+    color: #FFFFFF !important;
+  }
+
+  .bubble .ql-tooltip .ql-picker {
+    color: #FFFFFF !important;
+  }
+
+  .bubble .ql-editor {
+    padding: 4px 0 0 0 !important;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+
+  }
+
+  .bubble .ql-container {
+    font-size: 16px !important;
+  }
+
+  .bubble .bubble {
+    width: 90%;
+    min-height: 24px;
+    margin: 8px;
+  }
+
+  .ql-align-left {
+    text-align: left;
+  }
+
+  .ql-align-center {
+    text-align: center;
+  }
+
+  .ql-align-right {
+    text-align: right;
+  }
+
+  .ql-align-justify {
+    text-align: justify;
+  }
+
+  .noselect {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+
+    -khtml-user-select: none;
+    /* Konqueror */
+
+    -moz-user-select: none;
+    /* Firefox */
+
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+
+    user-select: none;
+    /* Non-prefixed version, currently
+
+  not supported by any browser */
+
+  }
+
+  #editPage {
+    width: 320px;
+    min-height: 504px;
+    margin: 0 auto;
+  }
+
+  #editPage .showMain {
+    width: 320px;
+    min-height: 504px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+
+  }
+
+  .grid_divs {
+    width: 30%;
+    height: 60px;
+    margin-bottom: 20px;
+    float: left;
+    position: relative;
+    border-top: 1px solid #666666;
+    border-left: 1px solid #666666;
+    background-color: #fff;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    border-collapse: collapse;
+    table-layout: fixed;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+
+  .grid_divs:nth-child(3n - 1) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .grid_divs .every_grid {
+    border-right: 1px solid #666666;
+    border-bottom: 1px solid #666666;
+    vertical-align: top;
+  }
+
+  .grid_divs .grid_clear_every {
+    display: none;
+    position: absolute;
+    right: -7px;
+    top: -8px;
+    color: #dcdcdc;
+    background-color: #ffffff;
+    cursor: pointer;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .grid_divs .grid_clear_every:hover {
+    color: #4574df;
+  }
+
+  .grid_files {
+    display: none;
+  }
+
+  .grid_div_toggle {
+    float: none;
+    width: 100% !important;
+    min-height: 40px;
+    height: auto !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border-left: 1px solid #dcdcdc;
+    border-top: 1px solid #dcdcdc;
+  }
+
+  .grid_div_toggle .every_grid .main_grid_div:first-of-type {
+    margin-top: -6px !important;
+  }
+
+  .md_one, .md_two, .md_three {
+    border: 1px solid transparent !important;
+  }
+
+  .md_one td, .md_two td, .md_three td {
+    border: 1px solid transparent !important;
+  }
+
+  .md_one .every_grid, .md_two .every_grid, .md_three .every_grid {
+    padding: 0 !important;
+  }
+
+  .grid_div_toggle .every_grid {
+    border-right: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 10px 10px 0 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+
+    /*height: 50px;*/
+  }
+
+  .grid_div_toggle .main_grid_div {
+    display: block;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+
+  }
+
+  .grid_div_toggle .main_grid_div .grid_div_p {
+    line-height: 1.5;
+    font-size: 16px;
+    word-break: break-all !important;
+  }
+
+  .grid_div_toggle .main_grid_div .grid_div_p:empty:before {
+    color: #dcdcdc;
+    content: '';
+  }
+
+  .grid_div_toggle .grid_files {
+    position: relative;
+    display: none;
+    width: 100%;
+    min-height: 130px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+
+  }
+
+  .grid_div_toggle .grid_files .file_empty {
+    color: #dcdcdc;
+    text-align: left;
+    display: none;
+  }
+
+  .grid_div_toggle .text_clear_every {
+    display: none;
+  }
+
+  .grid_div_toggle .grid_clear_every {
+    display: none;
+  }
+
+  .main_grid_div {
+    display: none;
+    word-break: break-all !important;
+    width: 100%;
+    min-height: 24px;
+    margin: 15px auto 30px;
+    position: relative;
+    border: 1px solid transparent;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+
+    -webkit-user-select: none;
+    /* Chrome/Safari/Opera */
+
+    -khtml-user-select: none;
+    /* Konqueror */
+
+    -moz-user-select: none;
+    /* Firefox */
+
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+
+    user-select: none;
+    /* Non-prefixed version, currently
+
+  not supported by any browser */
+
+    line-height: 1.42;
+    height: auto !important;
+
+  }
+
+  .main_grid_div .grid_div_p {
+    width: 100%;
+    height: inherit;
+    line-height: 1.5;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+
+  }
+
+  .main_grid_div .grid_div_p:empty:before {
+    color: #dcdcdc;
+    content: attr(placeholder);
+  }
+
+  .text_clear_every {
+    display: none;
+    position: absolute;
+    right: -7px;
+    top: -8px;
+    color: #dcdcdc;
+    background-color: #ffffff;
+    cursor: pointer;
+  }
+
+  .text_clear_every:hover {
+    color: #4574df;
+  }
+
+  .main_t_grid_border {
+    border: 1px dashed #dcdcdc;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+
+    -webkit-box-sizing: border-box;
+    /* Safari */
+
+  }
+
+  .main_t_grid_border .text_clear_every {
+    display: block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .demo_file {
+    display: none;
+    width: 100%;
+    height: 40px;
+    border: 1px solid gray;
+  }
+
+  .grid_file_equal {
+    width: 33.33%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .grid_file_equal .grid_file_li {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #F2F3F9;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .grid_file_equal .grid_file_li:hover .grid_del_file {
+    display: block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .grid_file_equal .grid_file_li .grid_del_file {
+    display: none;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    color: #999999;
+    background-color: #F2F3F9;
+    cursor: pointer;
+  }
+
+  .grid_file_equal .grid_file_li .grid_del_file:hover {
+    color: #4574df;
+  }
+
+  .grid_file_equal .grid_file_li .grid_file_img {
+    max-width: 70px !important;
+    height: 60px !important;
+    padding: 4px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    vertical-align: middle;
+  }
+
+  .grid_file_equal .grid_file_li .grid_file_span {
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 2px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* Firefox */
+    -webkit-box-sizing: border-box;
+    /* Safari */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+
+</style>
+<body>
+<div id="myShare" class="my-gallery" style="font-size: 16px;">
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+      <div class="pswp__container">
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+        <div class="pswp__item"></div>
+      </div>
+      <div class="pswp__ui pswp__ui--hidden">
+        <div class="pswp__top-bar">
+          <div class="pswp__counter"></div>
+          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+          <button class="pswp__button pswp__button--share" title="Share"></button>
+          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <div class="pswp__preloader">
+            <div class="pswp__preloader__icn">
+              <div class="pswp__preloader__cut">
+                <div class="pswp__preloader__donut"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+          <div class="pswp__share-tooltip"></div>
+        </div>
+        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <div class="pswp__caption">
+          <div class="pswp__caption__center"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script>
+  $(function () {
+    let shareId = ''; // 分享id
+    let scrollFlag = false; // 是否触发touchmove
+    // 获取路径参数
+    function GetRequest() {
+      let url = location.search; //获取url中"?"符后的字串
+      let theRequest = new Object();
+      if (url.indexOf("?") != -1) {
+        let str = url.substr(1);
+        strs = str.split("&");
+        for (let i = 0; i < strs.length; i++) {
+          theRequest[strs[i].split("=")[0]] = decodeURIComponent(strs[i].split("=")[1]);
+        }
+      }
+      return theRequest;
+    }
+
+    if (GetRequest()['zoom']) {
+      $('#myShare').css('zoom', GetRequest()['zoom']);
+
+    }
+    if (GetRequest()['pkid']) {
+      shareId = GetRequest()['pkid'];
+      $.ajax({
+        type: 'POST',
+        url: '/AppServer2.0.asmx/GetSharingContent',
+        data: {sharingPkid: shareId},
+        success: function (res) {
+          console.log(11111,res.result.Content);
+          dataHandle(res);
+        },
+      });
+    } else {
+      $('#myShare').html('分享错误');
+    }
+
+    // 获取数据后的处理
+    var dataHandle = function (res) {
+      let titles = res.result.Title;
+      if (titles) {
+        $('title').eq(0).html(titles);
+      } else {
+        $('title').eq(0).html('Eggs');
+      }
+      let html = res.result.Content;
+      $('#myShare').prepend(html);
+
+      var items = [];
+      var pswpElement = document.querySelectorAll('.pswp')[0];
+
+      var img = $('.my-gallery').find('figure').find('a');
+      var img1 = $('.my-gallery').find('.preview_b');
+      img1.each(function () {
+        $(this).attr('href', $(this).attr('src'));
+      });
+
+      for (var i = 0; i < img.length; i++) {
+        var src = img[i].getAttribute('src');
+        var w = img[i].getAttribute('w');
+        var h = img[i].getAttribute('h');
+        var index = i;
+        items.push({'src': src, 'w': w, 'h': h});
+        img[i].setAttribute('index', i)
+      }
+
+      // 文件预览
+      $('figure').on('touchend', function (e) {
+        if (scrollFlag) {
+          scrollFlag = false;
+          return;
+        }
+        var index = parseInt($(this).children('a').attr('index'));
+        var options = {
+          index: index,
+          escKey: true,
+          timeToIdle: 4000,
+          showHideOpacity: true,
+          getThumbBoundsFn: false,
+          history: false,
+          focus: false,
+          showAnimationDuration: 0,
+          hideAnimationDuration: 0
+        };
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery.init();
+        e.preventDefault();
+      });
+    }
+    $(window).on('touchmove', function (e) {
+      let tgc = $(e.target).attr('class');
+      if (tgc && tgc.indexOf('grid_file_img') !== -1) {
+        scrollFlag = true;
+      } else {
+        scrollFlag = false;
+      }
+    })
+
+  });
+</script>
+</html>

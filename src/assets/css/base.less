@@ -1,0 +1,641 @@
+@charset "UTF-8";
+@import url('./media.less');
+html,body {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  position: relative;
+  min-width: 1200px;
+  min-height: 600px;
+}
+// 圆角
+button{
+  border: none;
+}
+.b-radius(@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+// 隐藏被旋转的 div 元素的背面
+.backface {
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden; /* Chrome 和 Safari */
+  -moz-backface-visibility:hidden;    /* Firefox */
+  -ms-backface-visibility:hidden;     /* Internet Explorer */
+}
+
+// 文字定义
+/*文字定义*/
+
+.f-size-12 {
+  font-size: 12px;
+}
+
+.f-size-14 {
+  font-size: 14px;
+}
+
+.f-size-16 {
+  font-size: 16px;
+}
+
+.f-size-18 {
+  font-size: 18px;
+}
+
+.f-size-20{
+  font-size: 20px;
+}
+
+.f-size-24{
+  font-size:24px;
+}
+
+.f-size-30 {
+  font-size: 30px;
+}
+
+
+
+
+// text-align
+@t-c: center;
+@t-l: left;
+@t-r: right;
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.al {
+  text-align: left;
+}
+
+.ac {
+  text-align: center;
+}
+
+.ar {
+  text-align: right;
+}
+
+.hide {
+  display: none;
+}
+
+
+
+// border
+.b-t-f0f0f0 {
+  border-top: 1px solid #f0f0f0;
+}
+
+/* 颜色 */
+
+/*页面主颜色*/
+
+@base-color-blue: #3C7EC0;
+@base-color-grey: #f5f5f5;
+@bg-red: #e55050;
+@alpha-bg: rgba(0, 0, 0, .5);
+@bg-f2f2f2: #f2f2f2;
+@bg-f7f7f7: #f7f7f7;
+
+
+// 文字颜色定义
+@white: white;
+@color-333: #333;
+// vertical-align
+.vm {
+  vertical-align: middle;
+}
+.vt {
+  vertical-align: top;
+}
+.vs {
+  vertical-align: super;
+}
+
+/* dislpay*/
+.dis-no {
+  display: none;
+}.dis-bl {
+   display: block;
+ }.dis-in {
+    display: inline;
+  }.dis-in-bl {
+     display: inline-block;
+   }.dis-li {
+      display: list-item;
+    }.dis-ta {
+       display: table;
+     }
+
+/* position */
+.po-re {
+  position: relative;
+}
+.po-ab {
+  position: absolute;
+}
+.po-fi {
+  position: fixed;
+}
+
+
+
+
+// width
+.w{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+// margin
+.mlr16 {
+  margin: 0 16px;
+}
+
+.m20 {
+  margin: 10px;
+}
+.m_t{
+  margin-top: 20px;
+}
+.bg{
+  background:rgba(255,255,255,1);
+  border-radius: 10px
+}
+.p20{
+  padding: 20px;
+  box-sizing: border-box;
+}
+.p10{
+  padding: 10px;
+  box-sizing: border-box;
+}
+.p_l_20{
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+input{
+  background:none;
+  list-style-type:none;
+  outline: none;
+  border: none;
+}
+
+
+  /*去除默认输入框底色*/
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset; //使用足够大的纯色内阴影覆盖黄色背景
+  }
+
+  input:-webkit-autofill {
+    background-color: #ffffff !important;
+    background-image: none;
+    color: #999999;
+  }
+// 主颜色++++++++++++++++++++++++++++++++++++++++
+@blue: #4583F0;
+@line: #DCDCDC;
+@hoveBlue: #4574DF;
+@graySix: #666666;
+@grayNight: #999999;
+
+
+.align_items_center { // 兼容
+  align-items:center;
+  -webkit-align-items:center;
+  box-align:center;
+  -moz-box-align:center;
+  -webkit-box-align:center;
+}
+
+.display_flex { // 兼容
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.cur {
+  cursor: pointer;
+}
+
+.word_over {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.box_sizing {
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+}
+
+@c: 100%;
+.calc_h(@c) {
+  height: -moz-calc(@c);
+  height: -webkit-calc(@c);
+  height: calc(@c);
+}
+.calc_w(@c) {
+  width: -moz-calc(@c);
+  width: -webkit-calc(@c);
+  width: calc(@c);
+}
+
+// 自定义滚动条
+#app {
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  ::-webkit-scrollbar
+  {
+    width: 6px;  /*滚动条宽度*/
+    height: 6px;  /*滚动条高度*/
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  ::-webkit-scrollbar-track
+  {
+    // -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+    border-radius: 3px;  /*滚动条的背景区域的圆角*/
+    // background-color: red;/*滚动条的背景颜色*/
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb
+  {
+    border-radius: 3px;  /*滚动条的圆角*/
+    // -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.3);
+    background-color:  rgba(151,168,190,.3);  /*滚动条的背景颜色*/
+  }
+
+}
+
+
+
+@br: 6px;
+.border_radius(@br:6px) {
+  -webkit-border-radius: @br;
+  -moz-border-radius: @br;
+  border-radius: @br;
+}
+
+// 按钮有背景
+.main_button_bg {
+  display: block;
+  padding: 0 20px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  background-color: @blue;
+  color: #FFFFFF;
+  .border_radius(@br:6px);
+  border: 1px solid #4583F0;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: @hoveBlue;
+  }
+}
+
+// 按钮无背景
+.main_button {
+  display: block;
+  padding: 0 20px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border: 1px solid @blue;
+  .border_radius(@br:6px);
+  border: 1px solid #4583F0;
+
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid @hoveBlue;
+  }
+}
+
+// 按钮无背景字体有颜色
+.main_button_color {
+  display: block;
+  padding: 0 20px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: @blue;
+  border: 1px solid @blue;
+  .border_radius(@br:6px);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// 弹框样式
+.popup {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(211,211,211,0.3) !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  line-height: 1;
+
+  .popup_box {
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: -242px;
+    padding: 40px;
+    .h_mediaPdT(@pxOne: 30px);
+    .h_mediaPdB(@pxOne: 30px);
+    .w_mediaPdL(@pxOne: 30px);
+    .w_mediaPdR(@pxOne: 30px);
+    .box_sizing;
+    -webkit-box-shadow: inset 0 0 10px #474747;
+    -moz-box-shadow: inset 0 0 10px #474747;
+    -webkit-box-shadow: 0 0 10px rgba(71, 71, 71, 0.4);
+    -moz-box-shadow: 0 0 10px rgba(71, 71, 71, 0.4);
+    box-shadow: 0 0 10px rgba(71, 71, 71, 0.4);
+    .border_radius(@br: 6px);
+  }
+  .popup_title {
+    font-size: 18px;
+  }
+  .cancelIcon {
+    font-size: 14px;
+    font-weight: bold;
+    &:hover {
+      color: @hoveBlue;
+    }
+  }
+}
+
+// element table
+.list_el_table {
+
+  .el-table__body-wrapper {
+    max-height: calc(~ '100vh - 368px');
+    overflow-y: auto;
+
+    @media screen and (max-height: 768px) {
+      max-height: calc(~ '100vh - 298px');
+
+    }
+  }
+
+  .el-table__header {
+    background-color: #F2F3F9;
+  }
+  table tr td:first-child,table tr th:first-of-type{
+    border-top-left-radius: 6px;
+  }
+  table tr td:last-child,table tr th:nth-last-child(2) {
+    border-top-right-radius: 6px;
+  }
+  table tr td:first-child,table tr th:first-of-type {
+    border-bottom-left-radius: 6px;
+  }
+  table tr td:last-child,table tr th:nth-last-child(2) {
+    border-bottom-right-radius: 6px;
+  }
+
+  .el-table__header .cell,.el-table__body .cell {
+    font-size: 14px;
+    max-height: 36px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+  }
+  .el-table__header .cell {
+    font-size: 16px;
+
+  }
+
+  .el-table__header tr th,.el-table__body  tr td {
+    padding: 7px 0;
+    @media screen and (max-height: 768px) {
+      padding: 2px 0;
+    }
+  }
+
+  .el-table__header tr th:last-child,.el-table__body  tr td:last-child {
+    text-align: center;
+  }
+  .el-table__body {
+    border-collapse:separate;
+    border-spacing:0px 5px;
+    background-color: #F2F3F9;
+  }
+  .el-table td,.el-table th.is-leaf {
+    border-bottom: none;
+    margin-bottom: 20px;
+  }
+
+  .el-table th,.el-table td{
+    height: 50px;
+    .h_mediaH(@pxOne:40px);
+
+  }
+}
+
+
+.content {
+  width: 100%;
+  height: 100%;
+
+
+  padding: 10px 100px 95px;
+  .box_sizing;
+
+  .h_mediaPdThree(@pxOne: 10px, @pxTwo: 100px, @pxThree: 50px);
+
+}
+//.contents {
+//  width: 100%;
+//  height: 100%;
+//  padding: 20px 100px 50px;
+//  overflow: hidden;
+//  .box_sizing;
+//
+//  .h_mediaPdThree(@pxOne: 10px, @pxTwo: 100px, @pxThree: 50px);
+//
+//}
+
+// input框校验时高亮变红
+.red_border {
+  input {
+    border: 1px solid red;
+  }
+}
+
+
+// 复选框
+.self_checked(@pxone: 20px, @color: #999999) {
+  height: @pxone;
+  line-height:@pxone;
+  position: relative;
+  .el-checkbox {
+    .el-checkbox__label {
+      color: #000;
+    }
+    .el-checkbox__input.is-checked {
+      color:  @color;
+    }
+
+    .el-checkbox__inner {
+      background-color: #fff;
+      border-color:  @color;
+    }
+    .el-checkbox__inner::after {
+      border-color:  @color !important;
+    }
+  }
+}
+
+#app {
+  background-color: #F2F3F9;
+}
+
+.el_icon:hover {
+  color: #4574DF;
+}
+
+
+.noselect {
+
+  -webkit-touch-callout: none; /* iOS Safari */
+
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+
+  -khtml-user-select: none; /* Konqueror */
+
+  -moz-user-select: none; /* Firefox */
+
+  -ms-user-select: none; /* Internet Explorer/Edge */
+
+  user-select: none; /* Non-prefixed version, currently
+
+not supported by any browser */
+
+}
+
+
+// 文件上传进度条
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+.upload_progress {
+  position: fixed;
+  right: 0;
+  bottom:  0;
+  width: 330px;
+  min-height: 100px;
+  .border_radius(@br: 6px);
+  background-color: #fff;
+  z-index: 1100;
+  .box_sizing;
+
+  .upload_progress_close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    font-size:  16px;
+    color: @grayNight;
+    .cur;
+  }
+
+  .upload_progress_title {
+    height: 50px;
+    line-height:  50px;
+    text-align: center;
+    font-size:  16px;
+    border-bottom: 1px solid @line;
+  }
+  .upload_progress_ul {
+    max-height: 310px;
+    overflow: auto;
+    padding: 10px;
+    .box_sizing;
+
+    .upload_progress_li {
+        height: 40px;
+        line-height: 40px;
+        padding: 6px;
+        position: relative;
+        &:not(:first-of-type) {
+          margin-top: 6px;
+        }
+      .upload_progress_img {
+        display: inline-block;
+        width: 32px;
+        height: 32px; 
+        vertical-align: bottom;
+        img {
+          display: inline-block;
+          height: 100%; 
+          vertical-align: top;
+          text-align: center;
+          max-width: 32px;
+        }
+      }
+
+      .upload_progress_name {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 170px;
+        .word_over;
+
+      }
+
+      .upload_progress_percent {
+        position: absolute;
+        left: 44px;
+        top: 20px;
+        .el-progress--line {
+          width: 240px;
+          display: inline-block;
+        }
+
+      }
+
+      .upload_progress_size {
+        font-size: 12px;
+        color: @grayNight;
+        padding-left: 20px;
+      }
+
+      .el-icon-check {
+        position: absolute;
+        top: 0px;
+        right: 6px;
+        color: #409EFF;
+        font-size: 16px;
+        height: 52px;
+        line-height: 52px;
+        display: inline;
+        font-weight: bold;
+      }
+    }
+  }
+}
+

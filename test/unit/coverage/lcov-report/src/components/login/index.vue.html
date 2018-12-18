@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/login/index.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/components/login</a> index.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;<span class="cstat-no" title="statement not covered" >t<span class="fstat-no" title="function not covered" >em</span>plate&gt;</span>
+  &lt;div class="body"&gt;
+    &lt;div class="bigbox"&gt;
+<span class="cstat-no" title="statement not covered" >      &lt;div class="head"&gt;账户密码登录&lt;/div&gt;</span>
+      &lt;div&gt;&lt;input type="text" v-model="userName" ref="userName" placeholder="手机/邮箱/账号" class="name"&gt;&lt;/div&gt;
+      &lt;div&gt;&lt;input type="password" v-model="passWord" ref="passWord" placeholder="输入密码" class="password"
+                  @keyup.enter="login"&gt;&lt;/div&gt;
+      &lt;el-chec<span class="cstat-no" title="statement not covered" >kbox v-model="checked" style</span>="color:#a0a0a0;" class="next"&gt;下次自动登录&lt;/el-checkbox&gt;
+      &lt;button type="button" @click="login" ref="enter" class="enter"&gt;登 录&lt;/button&gt;
+<span class="cstat-no" title="statement not covered" >    &lt;/div&gt;</span>
+  &lt;/div&gt;<span class="fstat-no" title="function not covered" ></span>
+&lt;/te<span class="cstat-no" title="statement not covered" >mplate&gt;</span>
+&lt;script&gt;
+  import {setCookie, getCookie} from "../../api/cookie"
+&nbsp;
+  export default {
+    data() {
+      return {<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >        userName: '',</span>
+<span class="cstat-no" title="statement not covered" >        passWord: '',</span>
+        checked: false
+<span class="cstat-no" title="statement not covered" >      }</span>
+    },<span class="cstat-no" title="statement not covered" ></span>
+    mounted() {
+<span class="cstat-no" title="statement not covered" >      if (getCookie('Uname')) {</span>
+<span class="cstat-no" title="statement not covered" >        this.userName = getCookie('</span>Uname');
+      }
+      if (getCookie('Pkid')) {
+        this.passWord = getCookie('Pkid');
+      }
+      if (this.userN<span class="fstat-no" title="function not covered" >ame &amp;&amp;</span> this.passWord) {
+        this.$refs<span class="cstat-no" title="statement not covered" >.pass</span>Word.focus();
+      }
+    },<span class="cstat-no" title="statement not covered" ></span>
+    meth<span class="cstat-no" title="statement not covered" >ods: {</span>
+      lo<span class="cstat-no" title="statement not covered" >gin() {</span>
+        if (this.userName == "" || this.passWord == "") {
+          this.$mes<span class="cstat-no" title="statement not covered" >sage.warning("</span>请输入用户名或密码");
+          return;<span class="cstat-no" title="statement not covered" ></span>
+        } else {
+          var name <span class="cstat-no" title="statement not covered" >= this.userName;</span>
+<span class="cstat-no" title="statement not covered" >          var pass = this.passWord;<span class="fstat-no" title="function not covered" ></span></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >          let data = {"Uname": this.userName, "Pwd": this.passWord};</span>
+          th<span class="cstat-no" title="statement not covered" >is.$HTTP('post', '/System_userLogin', data).then(</span>res =&gt; {
+<span class="cstat-no" title="statement not covered" >            let pkid = res.result.Pkid;</span>
+<span class="cstat-no" title="statement not covered" >            if (res.code == "200") {</span>
+<span class="cstat-no" title="statement not covered" >              setCookie("Pkid", pkid, 1000</span> * 60);
+              setCookie("Pwd",this.passWord, 1000 * 60)
+<span class="cstat-no" title="statement not covered" >              this.$message.warning('登录成功');</span>
+              this.$router.push('/staff');
+            } else {
+              this.$message.warning("账号或密码错误")
+<span class="cstat-no" title="statement not covered" >            }</span>
+<span class="cstat-no" title="statement not covered" >          })</span>
+        }
+        if (this.checked) {
+          this.setCookie<span class="fstat-no" title="function not covered" >(name, pas</span>s, 7)
+        }<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      },</span>
+      setCookie(c_name, c_pwd, exdays) {
+<span class="cstat-no" title="statement not covered" >        var exdate = new Date();//获取时间</span>
+<span class="cstat-no" title="statement not covered" >        exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * exdays);//保存的天数</span>
+        //字符串拼接cookie
+        window.document.cookie = "userName" + "=" + c_name + ";path=/;expires=" + exdate.toGMTString();
+        window.document.cookie = "userPwd" + "=" + c_pwd + ";path=/;expires=" + exdate.toGMTString();
+      },<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      //读取cookie</span>
+      getCookie: f<span class="cstat-no" title="statement not covered" >unction () {</span>
+<span class="cstat-no" title="statement not covered" >        if (document.cookie.length &gt; 0) {</span>
+          var arr = d<span class="cstat-no" title="statement not covered" >ocument.cookie.spl</span>it('; ');//这里显示的格式需要切割一下自己可输出看下
+          for (var i = 0; i &lt; arr.length; i++) {
+<span class="cstat-no" title="statement not covered" >            var arr2 = arr[i].split('=');//再次切割</span>
+<span class="cstat-no" title="statement not covered" >            //判断查找相对应的值</span>
+            if (a<span class="cstat-no" title="statement not covered" >rr2[0] == 'userName') {</span>
+<span class="cstat-no" title="statement not covered" >              this.ruleForm.userName = arr2[1]</span>;//保存到保存数据的地方
+            } else if (arr2[0] == 'userPwd') {
+              this.ruleForm.password = arr2[1];
+            }
+          }
+        }
+      },<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >      //清除cookie</span>
+      clearCookie: function () {
+        this.setCookie("", "", -1);//修改2值都为空，天数为负1天就好了
+      }<span class="fstat-no" title="function not covered" ></span>
+<span class="cstat-no" title="statement not covered" >    },</span>
+    cr<span class="cstat-no" title="statement not covered" >eated() {</span>
+      if (getCookie('userPwd')) {
+        this.$router.push('/home');
+      }
+    }
+  }
+&lt;/script&gt;
+&nbsp;
+&lt;style lang="less"&gt;
+  @import '../../assets/css/base.less';
+  @import '../../assets/css/media.less';
+&nbsp;
+  .body {
+    width: 100%;
+    height: 100vh;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    background: url('../../asse<span class="cstat-no" title="statement not covered" >ts/img/bg.jpg') no-repeat;</span></span>
+    background-size: 100<span class="cstat-no" title="statement not covered" >% 100%;</span>
+<span class="cstat-no" title="statement not covered" >    .bigbox {<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" ></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span>
+<span class="cstat-no" title="statement not covered" >      padding: 60px 30px;</span>
+      .h_mediaPdTwo(@pxOne: 40px, @pxTwo: 30px);
+      background: #ffffff;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 55%;
+&nbsp;
+&nbsp;
+      border-radius: 6px;
+      box-sizing: border-box;
+      .head {
+        width: 360px;
+        height: 40px;
+        line-height: 40px;
+        /*border-bottom: 1px solid #f0f0f0;*/
+        font-size: 24px;
+        text-align: center;
+      }
+      .name {
+        width: 360px;
+        margin-top: 30px;
+        .h_mediaMgT(@pxOne: 20px);
+        border: 1px solid @line;
+        border-radius: 6px 6px 0 0;
+      }
+      .password {
+        width: 360px;
+        border-bottom: 1px solid @line;
+        border-left: 1px solid @line;
+        border-right: 1px solid @line;
+        border-radius: 0 0 6px 6px;
+      }
+      input, button {
+        height: 50px;
+        .h_mediaH(@pxOne: 40px);
+        /*margin-top: 30px;*/
+        width: 100%;
+        color: #555;
+        padding-left: 10px;
+        background: #f4f4f4;
+        box-sizing: border-box;
+      }
+&nbsp;
+      .enter {
+        margin-top: 30px;
+        background-color: @blue;
+        color: #fff;
+        border-radius: 6px;
+        cursor: pointer;
+        .h_mediaMgT(@pxOne: 20px);
+&nbsp;
+      }
+      .next {
+        margin-top: 30px;
+        .h_mediaMgT(@pxOne: 20px);
+&nbsp;
+      }
+    }
+  }
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Apr 11 2018 18:37:38 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>
